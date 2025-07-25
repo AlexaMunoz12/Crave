@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS user;
 
-DROP TABLE IF EXISTS meals;
+DROP TABLE IF EXISTS recipe;
 
 CREATE TABLE
     user (
@@ -10,10 +10,13 @@ CREATE TABLE
     );
 
 CREATE TABLE
-    meals (
+    recipe (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        meal_idea TEXT NOT NULL,
-        user_inputs TEXT NOT NULL,
-        recipe_data TEXT NOT NULL,
+        title TEXT NOT NULL,
+        body TEXT NOT NULL,
+        -- meal_idea TEXT NOT NULL,
+        -- user_inputs TEXT NOT NULL,
+        created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        author_id INTEGER NOT NULL,
         timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
     )

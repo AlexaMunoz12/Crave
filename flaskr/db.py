@@ -36,7 +36,7 @@ def init_db_command():
     click.echo('Initalized the database.')
 
 sqlite3.register_converter(
-    "timestamp", lambda v: datetime.formisoformat(v.decode())
+    "timestamp", lambda v: datetime.fromisoformat(v.decode())
 )
 
 def init_app(app):
